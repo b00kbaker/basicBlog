@@ -1,0 +1,24 @@
+{
+  "name": "basicblog",
+  "version": "1.0.0",
+  "description": "Basic blog with ability to Create a new post, Read old posts, Update an existing post, and delete.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b00kbaker/basicBlog.git"
+  },
+  "keywords": [
+    "blog",
+    "CRUD"
+  ],
+  "author": "Caitlin Murphy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/b00kbaker/basicBlog/issues"
+  },
+  "homepage": "https://github.com/b00kbaker/basicBlog#readme"
+}
