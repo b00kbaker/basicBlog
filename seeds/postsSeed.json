@@ -1,0 +1,13 @@
+[
+    {
+      "title": "Full Stack Web Developer",
+      "body": "An engineer who can handle all the work of databases, servers, systems engineering, and clients",
+      "user_id": 1
+    },
+    {
+      "title": "MYSQL",
+      "body": "An open source relational database management system",
+      "user_id": 2
+    }
+    
+]

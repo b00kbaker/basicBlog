@@ -1,0 +1,18 @@
+[
+    {
+      "message": "I am almost done with my 6 month certificate program in Full Stack!",
+      "post_id": 1,
+      "name": "Rick"
+    },
+    {
+      "message": "I prefer Mongoose for my database needs",
+      "post_id": 2,
+      "name": "Evie"
+    },
+    {
+      "message": "Once you get used to the unique syntax MYSQL isn't too bad",
+      "post_id": 2,
+      "name": "Alex"
+    }
+    
+]
