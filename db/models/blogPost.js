@@ -1,4 +1,4 @@
-const { Sequelize, Model, DataTypes } = require('sequelize');
+const {  Model, DataTypes } = require('sequelize');
 const sequelize = require("../../config/index");
 
 class Post extends Model {}
@@ -15,7 +15,7 @@ Post.init(
           type: DataTypes.STRING,
           allowNull: false,
         },
-        body: {
+        content: {
           type: DataTypes.STRING,
         },
         date_created: {
