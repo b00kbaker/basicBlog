@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
       
       const posts = blogData.map((post) => post.get({ plain: true }));
       console.log(posts);  
-      res.render('homepage', {
+      res.render('view-all', {
         logged_in: req.session.logged_in,
         posts,
       });
