@@ -1,4 +1,4 @@
-const router = require('express').Router();const connect= require("../config/index");
+const router = require('express').Router();
 const { Post, User, Comment } = require("../db/models");
 const withAuth = require("../utils/auth");
 
@@ -100,21 +100,5 @@ router.get('/post/:id', (req, res) => {
     });
 });
   
-// Edit a single blogPost route? Here or in API folder?
-router.get('/edit/:id', async (req, res) => {
-    try {
-      const postData = await Post.findByPk(req.params.id, {
-        include: [{ model: User }, { model: Comment }],
-      });
-  
-      const post = postData.get({ plain: true });
-  
-      res.render('edit', {
-        ...post,
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
   
 module.exports = router;
