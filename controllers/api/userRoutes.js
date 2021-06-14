@@ -13,20 +13,23 @@ router.get('/', (req, res) => {
     });
 });
 
-// POST a user to check if logged in and create a session token
+// POST a user to create new entry in DB
 router.post('/', (req, res) => {
    User.create({
      user_name: req.body.user_name,
      password: req.body.password
    })
-   .then(userData => {
+   .then((userData) => {
      req.session.save(() => {
-        // req.session.user_id = userData.id;
+        req.session.user_id = userData.id;
         req.session.user_name = userData.user_name;
         req.session.logged_in = true;
         
         res.json(userData);
       });
+   })
+   .catch((err) => {
+     res.status(500).json(err);
    });  
   
 });
