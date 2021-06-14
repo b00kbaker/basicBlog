@@ -1,19 +1,19 @@
-const commentHandler = async (event) => {
+async function commentHandler (event) {
     event.preventDefault();
   
     const commentName = document.querySelector('#comment-name').value.trim();
     const comment = document.querySelector('#comment-text').value.trim();
     const blogPostId = document.querySelector('#post-id').value.trim();
   
-    console.log(postId);
+    console.log(blogPostId);
   
-    if (blogPostId && commentName && comment) {
-      const response = await fetch(`/api/comment`, {
+    if (commentName && comment) {
+      const response = await fetch('/api/comment', {
         method: 'POST',
         body: JSON.stringify({
-          post_id: postId,
-          name: commentName,
-          comment: comment,
+          // post_id: blogPostId,
+          commentName,
+          comment,
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -21,7 +21,7 @@ const commentHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.reload();
       } else {
         alert('Failed to post comment!');
       }

@@ -1,9 +1,17 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require("../../db/models");
-const withAuth = require("../../utils/auth");
+// const withAuth = require("../../utils/auth");
 
 // GET find a single user? search bar function?
-
+router.get('/', (req, res) => {
+  User.findAll({
+      attributes: { exclude: ['password'] }
+  })
+    .then(userData => res.json(userData))
+    .catch(err => {
+      res.status(500).json(err);
+    });
+});
 
 // POST a user to check if logged in and create a session token
 router.post('/', (req, res) => {
@@ -13,7 +21,7 @@ router.post('/', (req, res) => {
    })
    .then(userData => {
      req.session.save(() => {
-        req.session.user_id = userData.id;
+        // req.session.user_id = userData.id;
         req.session.user_name = userData.user_name;
         req.session.logged_in = true;
         
@@ -22,6 +30,7 @@ router.post('/', (req, res) => {
    });  
   
 });
+
 
 // POST login route and process user
 router.post('/login', (req, res) => {
